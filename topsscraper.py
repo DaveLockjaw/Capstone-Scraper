@@ -29,14 +29,18 @@ Click on 'View More'
 driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[3]/div/div[2]/div[2]/div/div[3]/button/p""").click()
 '''
 
-driver.implicitly_wait(2)
-
 # USED TO SCROLL TO THE BOTTOM OF THE PAGE. REFERENCED FROM
 # https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python
 count = 0
 SCROLL_PAUSE_TIME = 2
+scrollheight = 160
+
 # Get scroll height
-last_height = driver.execute_script("return document.body.scrollHeight")
+# last_height = 0
+
+time.sleep(SCROLL_PAUSE_TIME)
+driver.execute_script("window.scrollTo(0, 160);")
+
 while True:
 
     count += 1
@@ -50,17 +54,21 @@ while True:
     urllib.request.urlretrieve(src, r"C:\Users\The Craptop Reborn\PycharmProjects\Capstone\clothingimages" + '\\' + imgname + ".png")
     print(count)
 
-    if count % 72 == 0:
+    if count % 18 == 0:
+        scrollheight += 894
         # Scroll down to bottom
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        driver.execute_script("window.scrollTo(0, " + str(scrollheight) + ");")
+        print("SCROLLING!")
 
         # Wait to load page
         time.sleep(SCROLL_PAUSE_TIME)
 
+        """
         # Calculate new scroll height and compare with last scroll height
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == last_height:
             break
         last_height = new_height
+        """
 
 driver.close()
