@@ -1,5 +1,17 @@
 from selenium.webdriver import Chrome
+from selenium.common.exceptions import NoSuchElementException
+import urllib.request
+import random
+import string
 import time
+import os
+
+
+def randomstring(stringLength=10):
+    """Generate a random string of fixed length """
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))
+
 
 webdriver = r"C:\Users\The Craptop Reborn\chromedriver.exe"
 driver = Chrome(webdriver)
@@ -12,33 +24,43 @@ driver.maximize_window()
 # Click on Blazers & sport coats in Men's category
 driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div[7]/div[2]/div/div[8]/button/div/span""").click()
 
-driver.implicitly_wait(2)
-
 # USED TO SCROLL TO THE BOTTOM OF THE PAGE. REFERENCED FROM
 # https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python
-SCROLL_PAUSE_TIME = 3
-# Get scroll height
-last_height = driver.execute_script("return document.body.scrollHeight")
-while True:
-    # Scroll down to bottom
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
-    # Wait to load page
-    time.sleep(SCROLL_PAUSE_TIME)
-
-    # Calculate new scroll height and compare with last scroll height
-    new_height = driver.execute_script("return document.body.scrollHeight")
-    if new_height == last_height:
-        break
-    last_height = new_height
-
-posts = driver.find_elements_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div/a""")
 count = 0
-for post in posts:
+SCROLL_PAUSE_TIME = 2
+scrollheight = 160
+
+time.sleep(SCROLL_PAUSE_TIME)
+driver.execute_script("window.scrollTo(0, 160);")
+
+while True:
+
+    count += 1
+    try:
+        post = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div["""  + str(count) + """]/a""")
+    except NoSuchElementException:
+        break
+
     print(post.text)
     print()
-    count += 1
+    imgname = randomstring()
+    img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/img""")
+    src = img.get_attribute('src')
 
-print(count)
+    path = "/Users/The Craptop Reborn/PycharmProjects/Capstone/blazerimages/"
+    if os.path.exists(path) is False:
+        os.mkdir(path)
+    urllib.request.urlretrieve(src, path + imgname + ".png")
+    print(count)
+
+    if count % 18 == 0:
+        scrollheight += 894
+        # Scroll down to bottom
+        driver.execute_script("window.scrollTo(0, " + str(scrollheight) + ");")
+        print("SCROLLING!")
+
+        # Wait to load page
+        time.sleep(SCROLL_PAUSE_TIME)
 
 driver.close()
+

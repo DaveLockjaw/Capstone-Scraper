@@ -1,10 +1,12 @@
 from selenium.webdriver import Chrome, ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
 import urllib.request
 import random
 import string
 import pandas as pd
 import time
+import os
 
 
 def randomstring(stringLength=10):
@@ -24,19 +26,11 @@ driver.maximize_window()
 # Click on Tops in Men's category
 driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div[7]/div[2]/div/div[1]/button/div/span""").click()
 
-'''
-Click on 'View More'
-driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[3]/div/div[2]/div[2]/div/div[3]/button/p""").click()
-'''
-
 # USED TO SCROLL TO THE BOTTOM OF THE PAGE. REFERENCED FROM
 # https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python
 count = 0
 SCROLL_PAUSE_TIME = 2
 scrollheight = 160
-
-# Get scroll height
-# last_height = 0
 
 time.sleep(SCROLL_PAUSE_TIME)
 driver.execute_script("window.scrollTo(0, 160);")
@@ -44,14 +38,21 @@ driver.execute_script("window.scrollTo(0, 160);")
 while True:
 
     count += 1
-    post = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div["""  + str(count) + """]/a""")
+    try:
+        post = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div["""  + str(count) + """]/a""")
+    except NoSuchElementException:
+        break
+
     print(post.text)
     print()
     imgname = randomstring()
     img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/img""")
-
     src = img.get_attribute('src')
-    urllib.request.urlretrieve(src, r"C:\Users\The Craptop Reborn\PycharmProjects\Capstone\clothingimages" + '\\' + imgname + ".png")
+
+    path = "/Users/The Craptop Reborn/PycharmProjects/Capstone/topimages/"
+    if os.path.exists(path) is False:
+        os.mkdir(path)
+    urllib.request.urlretrieve(src, path + imgname + ".png")
     print(count)
 
     if count % 18 == 0:
@@ -63,12 +64,9 @@ while True:
         # Wait to load page
         time.sleep(SCROLL_PAUSE_TIME)
 
-        """
-        # Calculate new scroll height and compare with last scroll height
-        new_height = driver.execute_script("return document.body.scrollHeight")
-        if new_height == last_height:
-            break
-        last_height = new_height
-        """
-
 driver.close()
+
+'''
+Click on 'View More'
+driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[3]/div/div[2]/div[2]/div/div[3]/button/p""").click()
+'''
