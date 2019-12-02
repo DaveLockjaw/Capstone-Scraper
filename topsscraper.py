@@ -38,9 +38,11 @@ driver.execute_script("window.scrollTo(0, 160);")
 while True:
 
     count += 1
+    print(count)
     try:
         post = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div["""  + str(count) + """]/a""")
     except NoSuchElementException:
+        print("No more elements found on page")
         break
 
     print(post.text)
@@ -53,13 +55,13 @@ while True:
     if os.path.exists(path) is False:
         os.mkdir(path)
     urllib.request.urlretrieve(src, path + imgname + ".png")
-    print(count)
 
     if count % 18 == 0:
         scrollheight += 894
         # Scroll down to bottom
         driver.execute_script("window.scrollTo(0, " + str(scrollheight) + ");")
         print("SCROLLING!")
+        print()
 
         # Wait to load page
         time.sleep(SCROLL_PAUSE_TIME)
