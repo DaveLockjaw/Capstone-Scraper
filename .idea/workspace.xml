@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a55a317-994c-4630-8c74-5c81cc7a2135" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Capstone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Capstone.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/athleticapparelscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/athleticapparelscraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blazersscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/blazersscraper.py" afterDir="false" />
@@ -38,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Wall-DFinal" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -53,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.jeansscraper">
+  <component name="RunManager" selected="Python.topsscraper">
     <configuration name="jacketsscraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Capstone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,8 +164,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.jeansscraper" />
         <item itemvalue="Python.topsscraper" />
+        <item itemvalue="Python.jeansscraper" />
         <item itemvalue="Python.swimwearscraper" />
         <item itemvalue="Python.sweaterscraper" />
         <item itemvalue="Python.jacketsscraper" />
@@ -197,7 +195,18 @@
       <workItem from="1575301536920" duration="180000" />
       <workItem from="1575301733917" duration="60000" />
       <workItem from="1575301795150" duration="93000" />
-      <workItem from="1575305796497" duration="3139000" />
+      <workItem from="1575305796497" duration="3204000" />
+      <workItem from="1575390755249" duration="835000" />
+      <workItem from="1575400083630" duration="26000" />
+      <workItem from="1575400857497" duration="599000" />
+      <workItem from="1575592179650" duration="854000" />
+      <workItem from="1575739842073" duration="3633000" />
+      <workItem from="1575853435790" duration="1369000" />
+      <workItem from="1576005938596" duration="25000" />
+      <workItem from="1579716528218" duration="817000" />
+      <workItem from="1579717364027" duration="435000" />
+      <workItem from="1579717819098" duration="1842000" />
+      <workItem from="1579719683526" duration="147000" />
     </task>
     <task id="LOCAL-00001" summary="New Scrapers + The 18 Picture scraper for TOPS">
       <created>1574708515920</created>
@@ -220,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574917163324</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Some teeaks">
+      <created>1575308971750</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575308971750</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,14 +259,15 @@
     <MESSAGE value="New Scrapers + The 18 Picture scraper for TOPS" />
     <MESSAGE value="SCRAPER SUCCESS" />
     <MESSAGE value="MERCARI SCRAPERS CREATED" />
-    <option name="LAST_COMMIT_MESSAGE" value="MERCARI SCRAPERS CREATED" />
+    <MESSAGE value="Some teeaks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some teeaks" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Capstone$webscraper.coverage" NAME="webscraper Coverage Results" MODIFIED="1574355215114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$hoodiescraper.coverage" NAME="hoodiescraper Coverage Results" MODIFIED="1574356356014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone$topsscraper.coverage" NAME="topsscraper Coverage Results" MODIFIED="1575308361500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone$topsscraper.coverage" NAME="topsscraper Coverage Results" MODIFIED="1579719245827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$jacketsscraper.coverage" NAME="jacketsscraper Coverage Results" MODIFIED="1574378496222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone$jeansscraper.coverage" NAME="jeansscraper Coverage Results" MODIFIED="1575308393567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone$jeansscraper.coverage" NAME="jeansscraper Coverage Results" MODIFIED="1579716606659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$swimwearscraper.coverage" NAME="swimwearscraper Coverage Results" MODIFIED="1574917091308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$sweaterscraper.coverage" NAME="sweaterscraper Coverage Results" MODIFIED="1574909005258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -27,7 +27,7 @@ driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[
 # USED TO SCROLL TO THE BOTTOM OF THE PAGE. REFERENCED FROM
 # https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python
 count = 0
-SCROLL_PAUSE_TIME = 2
+SCROLL_PAUSE_TIME = 1
 scrollheight = 160
 
 time.sleep(SCROLL_PAUSE_TIME)
@@ -38,7 +38,7 @@ while True:
     count += 1
     print(count)
     try:
-        post = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div["""  + str(count) + """]/a""")
+        post = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[1]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a""")
     except NoSuchElementException:
         print("No more elements found on page")
         break
@@ -46,7 +46,7 @@ while True:
     print(post.text)
     print()
     imgname = randomstring()
-    img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/img""")
+    img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[1]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/img""")
     src = img.get_attribute('src')
 
     path = "/Users/The Craptop Reborn/PycharmProjects/Capstone/suitimages/"
