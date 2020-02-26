@@ -206,6 +206,7 @@
       <workItem from="1582307408080" duration="868000" />
       <workItem from="1582309063624" duration="25000" />
       <workItem from="1582738626611" duration="675000" />
+      <workItem from="1582741632607" duration="57000" />
     </task>
     <task id="LOCAL-00001" summary="New Scrapers + The 18 Picture scraper for TOPS">
       <created>1574708515920</created>
@@ -270,9 +271,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed issues that arised between the fall and spring semester" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Capstone_Scraper$topsscraper.coverage" NAME="topsscraper Coverage Results" MODIFIED="1582741635700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$webscraper.coverage" NAME="webscraper Coverage Results" MODIFIED="1574355215114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$hoodiescraper.coverage" NAME="hoodiescraper Coverage Results" MODIFIED="1574356356014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone$topsscraper.coverage" NAME="topsscraper Coverage Results" MODIFIED="1582738670241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone$topsscraper.coverage" NAME="topsscraper Coverage Results" MODIFIED="1582742005410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$jacketsscraper.coverage" NAME="jacketsscraper Coverage Results" MODIFIED="1574378496222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$jeansscraper.coverage" NAME="jeansscraper Coverage Results" MODIFIED="1579716606659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$swimwearscraper.coverage" NAME="swimwearscraper Coverage Results" MODIFIED="1574917091308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
