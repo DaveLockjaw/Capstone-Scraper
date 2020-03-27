@@ -5,11 +5,9 @@ import random
 
 
 def upload_to_aws(local_file, s3_file_name):
-    ACCESS_KEY = 'AKIAIOQISPXCU4ZTULGA'
-    SECRET_KEY = '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'
     BUCKET = 'lowballimages'
 
-    s3 = boto3.client('s3', ACCESS_KEY, SECRET_KEY)
+    s3 = boto3.client('s3', profile_name='default', region_name='us-east-2')
 
     try:
         s3.upload_file(local_file, BUCKET, s3_file_name)
@@ -27,4 +25,9 @@ def randomstring(stringLength=10):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(stringLength))
 
+def main():
+    print("Start")
+    upload_to_aws('C:/Users/grigg/Downloads/test_image_2.jpeg', "test_image_2")
+    print("done")
 
+main()
