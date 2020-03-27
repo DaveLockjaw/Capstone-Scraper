@@ -15,7 +15,7 @@ def randomstring(stringLength=10):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 
-webdriver = r"C:\Users\The Craptop Reborn\chromedriver.exe"
+webdriver = r"C:\Users\grigg\chromedriver.exe"#"C:\Users\The Craptop Reborn\chromedriver.exe"
 driver = Chrome(webdriver)
 
 url = "https://www.mercari.com/us/category/2/"
@@ -51,7 +51,7 @@ while True:
     img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[1]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/img""")
     src = img.get_attribute('src')
 
-    path = "/Users/The Craptop Reborn/PycharmProjects/Capstone/topimages/"
+    path = "/Users/grigg/Desktop/Capstone/topimages/"#"/Users/The Craptop Reborn/PycharmProjects/Capstone/topimages/"
     if os.path.exists(path) is False:
         os.mkdir(path)
     urllib.request.urlretrieve(src, path + imgname + ".png")

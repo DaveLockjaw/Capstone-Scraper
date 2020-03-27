@@ -1,7 +1,7 @@
 import boto3
 
-dynamodb = boto3.resource('dynamodb',aws_access_key_id='AKIAIOQISPXCU4ZTULGA', aws_secret_access_key='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', region_name='us-east-2')
-table = dynamodb.Table('listings')
+ddb = boto3.resource('dynamodb', aws_access_key_id='A#KIA#JMS6#MK2ED#RKO#3DUQ#', aws_secret_access_key='Ny#aaT/y#Z1YJ83WO#gHO4gk2#TSD0x4#jA7YvlM#dNsgR', region_name='us-east-2')
+table = ddb.Table('listings')
 
 
 def put_listing():
@@ -15,3 +15,5 @@ def put_listing():
             'price': 150
         }
     )
+
+put_listing()
