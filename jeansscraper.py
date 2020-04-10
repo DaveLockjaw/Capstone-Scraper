@@ -21,15 +21,15 @@ def put_listing(textData, listing_id):
             'title': textData[0],
             'designer': textData[1],
             'category': 'Jeans',
-            'size': textData[3],
-            'price': textData[4]
+            'size': textData[2],
+            'price': textData[3]
         }
     )
     
 def upload_to_aws(local_file, s3_file_name):
     BUCKET = 'lowballimages'
 
-    s3 = boto3.client('s3', aws_access_key_id='AKIA#JMS6#MK2ED#RKO3DUQ', aws_secret_access_key='NyaaT/y#Z1YJ83W#OgHO4gk#2TSD0x4j#A7YvlMd#NsgR', region_name='us-east-2')
+    s3 = boto3.client('s3', aws_access_key_id='AKIAJMS6MK2EDRKO3DUQ', aws_secret_access_key='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', region_name='us-east-2')
 
     try:
         s3.upload_file(local_file, BUCKET, s3_file_name)
@@ -78,6 +78,9 @@ while True:
     randomId = randomstring()
     print(post.text)
     tempData = post.text.split('\n')
+    if tempData[2] == "|":
+        tempData[2] = tempData[3]
+        tempData[3] = tempData[4]
     put_listing(tempData, randomId)
     
     print()
