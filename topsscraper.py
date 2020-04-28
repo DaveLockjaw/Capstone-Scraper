@@ -4,7 +4,6 @@ from selenium.common.exceptions import NoSuchElementException
 import urllib.request
 import random
 import string
-import pandas as pd
 import time
 import os
 
@@ -15,7 +14,7 @@ def randomstring(stringLength=10):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 
-webdriver = r"C:\Users\grigg\chromedriver.exe"#"C:\Users\The Craptop Reborn\chromedriver.exe"
+webdriver = r"C:\Users\The Craptop Reborn\chromedriver.exe"
 driver = Chrome(webdriver)
 
 url = "https://www.mercari.com/us/category/2/"
@@ -24,49 +23,102 @@ driver.get(url)
 driver.maximize_window()
 
 # Click on Tops in Men's category
-driver.find_element_by_xpath("""//*[@id="__next"]/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/div/div[8]/div[2]/div/div[1]/button/div""").click()
+driver.find_element_by_xpath(
+    """//*[@id="__next"]/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[8]/div[2]/div/div/button""").click()
+
 
 # USED TO SCROLL TO THE BOTTOM OF THE PAGE. REFERENCED FROM
 # https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python
-count = 0
-SCROLL_PAUSE_TIME = 1
-scrollheight = 160
 
-time.sleep(SCROLL_PAUSE_TIME)
-driver.execute_script("window.scrollTo(0, 160);")
 
-while True:
+def get_post_data():
+    count = 0
+    SCROLL_PAUSE_TIME = 2
+    scrollheight = 210
 
-    count += 1
-    print(count)
-    try:
-        post = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a""")
-    except NoSuchElementException:
-        print("No more elements found on page")
-        break
+    time.sleep(SCROLL_PAUSE_TIME)
+    driver.execute_script("window.scrollTo(0, 210);")
 
-    print(post.text)
-    print()
-    imgname = randomstring()
-    img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/img""")
-    src = img.get_attribute('src')
+    while True:
 
-    path = "/Users/grigg/Desktop/Capstone/topimages/"#"/Users/The Craptop Reborn/PycharmProjects/Capstone/topimages/"
-    if os.path.exists(path) is False:
-        os.mkdir(path)
-    urllib.request.urlretrieve(src, path + imgname + ".png")
+        count += 1
+        print(count)
+        try:
+            post = driver.find_element_by_xpath(
+                """//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(
+                    count) + """]/a""")
+        except NoSuchElementException:
+            print("No more elements found on page")
+            break
 
-    if count % 18 == 0:
-        scrollheight += 894
-        # Scroll down to bottom
-        driver.execute_script("window.scrollTo(0, " + str(scrollheight) + ");")
-        print("SCROLLING!")
+        textData = post.text.split('\n')
+
+        # print(post.text)
+        if textData[2] == " | ":
+            try:
+                criteria = ["tshirt", "t-shirt", "TSHIRT", "T-Shirt", "Tshirt", "TShirt", "T-shirt", "T-SHIRT", "tshirts",
+                            "Tshirts", "TSHIRTS", "t shirt", "T Shirt", "T shirt", "T SHIRT", "t-shirts", "tee", "Tee",
+                            "TEE", "tank top", "Tank Top", "TANK TOP", "tanktop", "TankTop", "TANKTOP", "tank",
+                            "Tank", "TANK"]
+                if any(i in textData[0] for i in criteria):
+                    continue
+                else:
+                    print(textData[0])
+            except IndexError:
+                pass
+            try:
+                print(textData[1])
+            except IndexError:
+                pass
+            try:
+                print(textData[3])
+            except IndexError:
+                pass
+            try:
+                print(textData[4])
+            except IndexError:
+                pass
+        else:
+            try:
+                print(textData[0])
+            except IndexError:
+                pass
+            try:
+                print(textData[1])
+            except IndexError:
+                pass
+            try:
+                print(textData[2])
+            except IndexError:
+                pass
+
         print()
 
-        # Wait to load page
-        time.sleep(SCROLL_PAUSE_TIME)
+        imgname = randomstring()
+        img = driver.find_element_by_xpath(
+            """//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(
+                count) + """]/a/div/div[1]/div/img""")
 
-driver.close()
+        src = img.get_attribute('src')
+
+        path = "/Users/The Craptop Reborn/PycharmProjects/Capstone/topimages/"
+        if os.path.exists(path) is False:
+            os.mkdir(path)
+        urllib.request.urlretrieve(src, path + imgname + ".png")
+
+        if count % 18 == 0:
+            scrollheight += 909
+            # Scroll down to bottom
+            driver.execute_script("window.scrollTo(0, " + str(scrollheight) + ");")
+            print("SCROLLING!")
+            print()
+
+            # Wait to load page
+            time.sleep(SCROLL_PAUSE_TIME)
+
+
+get_post_data()
+# driver.close()
 
 '''
 Click on 'View More'

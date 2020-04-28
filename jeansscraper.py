@@ -59,7 +59,7 @@ driver.find_element_by_xpath("""//*[@id="__next"]/div[1]/div[2]/div/div[2]/div/d
 # USED TO SCROLL TO THE BOTTOM OF THE PAGE. REFERENCED FROM
 # https://stackoverflow.com/questions/20986631/how-can-i-scroll-a-web-page-using-selenium-webdriver-in-python
 count = 0
-SCROLL_PAUSE_TIME = 5
+SCROLL_PAUSE_TIME = 2
 scrollheight = 210
 
 time.sleep(SCROLL_PAUSE_TIME)
@@ -84,7 +84,7 @@ while True:
     put_listing(tempData, randomId)
     
     print()
-    img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/img""")
+    img = driver.find_element_by_xpath("""//*[@id="__next"]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div/div[""" + str(count) + """]/a/div/div[1]/div/img""")
     src = img.get_attribute('src')
 
     path = "C:/Users/grigg/OneDrive/Desktop/Capstone/jeanimages"#"/Users/The Craptop Reborn/PycharmProjects/Capstone/jeanimages/"
@@ -94,7 +94,7 @@ while True:
     upload_to_aws((path + randomId + ".png"), randomId)
     
     if count % 8 == 0:
-        scrollheight += 914
+        scrollheight += 909
         # Scroll down to bottom
         driver.execute_script("window.scrollTo(0, " + str(scrollheight) + ");")
         print("SCROLLING!")
