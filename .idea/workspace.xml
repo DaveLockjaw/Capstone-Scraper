@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a55a317-994c-4630-8c74-5c81cc7a2135" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/capstone_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/swaptopscraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/The_Craptop_Reborn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/The_Craptop_Reborn.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeansscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/jeansscraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topsscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/topsscraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swaptopscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/swaptopscraper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +42,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.topsscraper">
+  <component name="RunManager" selected="Python.swaptopscraper">
     <configuration name="checkdirectory" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Capstone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,8 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.topsscraper" />
         <item itemvalue="Python.swaptopscraper" />
+        <item itemvalue="Python.topsscraper" />
         <item itemvalue="Python.jeansscraper" />
         <item itemvalue="Python.checkdirectory" />
         <item itemvalue="Python.upload_image_test" />
@@ -226,7 +222,7 @@
       <workItem from="1587574935050" duration="914000" />
       <workItem from="1587756946123" duration="813000" />
       <workItem from="1587757805707" duration="1205000" />
-      <workItem from="1588097656816" duration="1214000" />
+      <workItem from="1588097656816" duration="2521000" />
     </task>
     <task id="LOCAL-00001" summary="New Scrapers + The 18 Picture scraper for TOPS">
       <created>1574708515920</created>
@@ -270,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585324998222</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed Mercari and Swap XPATH IMG issues">
+      <created>1588098895352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588098895352</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,15 +299,16 @@
     <MESSAGE value="Some teeaks" />
     <MESSAGE value="Fixed issues that arised between the fall and spring semester" />
     <MESSAGE value="Fixed Mercari XPATH and Scroll Issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Mercari XPATH and Scroll Issues" />
+    <MESSAGE value="Fixed Mercari and Swap XPATH IMG issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Mercari and Swap XPATH IMG issues" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Capstone_Scraper$topsscraper.coverage" NAME="topsscraper Coverage Results" MODIFIED="1582741635700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$upload_image_test.coverage" NAME="upload_image_test Coverage Results" MODIFIED="1582838991533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$webscraper.coverage" NAME="webscraper Coverage Results" MODIFIED="1574355215114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$hoodiescraper.coverage" NAME="hoodiescraper Coverage Results" MODIFIED="1574356356014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Capstone$swaptopscraper.coverage" NAME="swaptopscraper Coverage Results" MODIFIED="1588098391030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$topsscraper.coverage" NAME="topsscraper Coverage Results" MODIFIED="1588098826483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Capstone$swaptopscraper.coverage" NAME="swaptopscraper Coverage Results" MODIFIED="1588099575400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$jacketsscraper.coverage" NAME="jacketsscraper Coverage Results" MODIFIED="1574378496222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$jeansscraper.coverage" NAME="jeansscraper Coverage Results" MODIFIED="1587757206701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Capstone$checkdirectory.coverage" NAME="checkdirectory Coverage Results" MODIFIED="1585848399224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

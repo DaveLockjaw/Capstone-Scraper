@@ -93,6 +93,7 @@ def get_post_data():
 
             # Wait to load page
             time.sleep(SCROLL_PAUSE_TIME)
+            """return textData USED FOR capstone_test.py so test can recieve returned data"""
 
 
 get_post_data()
